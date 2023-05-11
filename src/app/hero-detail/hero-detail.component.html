@@ -1,8 +1,16 @@
 <div *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
   <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <div class="flex items-center justify-between pl-2 mt-2 border shadow-md h-14 w-[340px]">
+      <div>
+        <div><span>id: </span>{{hero.id}}</div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+      </div>
+      <div>
+        <img class="w-12 h-12 border border-slate-600 bg-slate-200" [title]="hero.name" [src]="hero.image"
+          alt={{hero.name}} />
+      </div>
+    </div>
   </div>
 </div>
