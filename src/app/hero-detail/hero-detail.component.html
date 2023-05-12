@@ -4,14 +4,17 @@
     <div>
       <div><span>id: </span>{{hero.id}}</div>
       <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+      <input class="pl-1 border rounded border-slate-600" id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
     <div>
-      <img class="w-12 h-12 border border-slate-600 bg-slate-200" [title]="hero.name" [src]="hero.image"
+      <img class="w-12 h-12 border border-slate-50 bg-slate-200" [title]="hero.name" [src]="hero.image"
         alt={{hero.name}} />
     </div>
   </div>
   <button
     class="p-2 mb-3 text-sm transition-all rounded shadow-md text-slate-900 bg-slate-200 hover:text-white hover:bg-blue-500 hover:text-base hover:shadow-xl"
     type="button" (click)="goBack()">go back</button>
+  <button
+    class="p-2 mb-3 text-sm transition-all rounded shadow-md text-slate-900 bg-slate-200 hover:text-white hover:bg-green-500 hover:text-base hover:shadow-xl"
+    type="button" (click)="save()">save</button>
 </div>
