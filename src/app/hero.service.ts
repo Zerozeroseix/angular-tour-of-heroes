@@ -18,7 +18,6 @@ export class HeroService {
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getHeroes(): Observable<Hero[]> {
-    // const heroes = of(HEROES)
     const heroes = this.http.get<Hero[]>(this.heroesUrl).pipe(
       tap(_ => this.log('FROM tap operator: fetched heroes')),
       map(heroes => heroes.map(hero => ({ ...hero, image: this.getImage(hero.name) }))),
@@ -27,18 +26,18 @@ export class HeroService {
     return heroes
   }
 
-
+  /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
-    // For now, assume that a hero with the specified `id` always exists.
-    // Error handling will be added in the next step of the tutorial.
-    const hero = HEROES.find(h => h.id === id)!;
-    const heroWithImage = { ...hero, image: this.getImage(hero.name) }
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(heroWithImage);
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`FROM tap operator: fetched hero id=${id}`)),
+      map(hero => ({ ...hero, image: this.getImage(hero.name) })),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
 
-  getImage(heroName: string) {
+  private getImage(heroName: string) {
     const imageUrl: string = `${environment.heroImageServerUrl}/${heroName}`
     return imageUrl
   }
