@@ -1,7 +1,7 @@
 <div class="mt-5">
   <h2 class="text-3xl border shadow-sm">My Heroes</h2>
   <ul class="p-0 mt-4 list-none w-60">
-    <li class="flex mb-4 border shadow-sm" *ngFor="let hero of heroes">
+    <li class="flex mb-4 border shadow-md" *ngFor="let hero of heroes">
       <button class="flex items-stretch h-9 flex-1 left-0 space-y-1 cursor-pointer relative  m-[0.5] p-0 rounded "
         [ngClass]="{'bg-slate-50 hover:bg-slate-800 hover:text-slate-50 hover:left-[0.1rem]' :  hero!==selectedHero, 'text-lg bg-black text-white hover:bg-gray-500': hero===selectedHero}"
         type="button" (click)="onSelect(hero)">
