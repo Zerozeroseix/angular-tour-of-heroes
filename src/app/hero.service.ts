@@ -20,8 +20,10 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     // const heroes = of(HEROES)
     const heroes = this.http.get<Hero[]>(this.heroesUrl).pipe(
-      map(heroes => heroes.map(hero => ({ ...hero, image: this.getImage(hero.name) })
-      )))
+      tap(_ => this.log('FROM tap operator: fetched heroes')),
+      map(heroes => heroes.map(hero => ({ ...hero, image: this.getImage(hero.name) }))),
+      catchError(this.handleError<Hero[]>('getHeroes', [])),
+    )
     return heroes
   }
 
