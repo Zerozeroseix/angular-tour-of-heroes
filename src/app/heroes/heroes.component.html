@@ -1,5 +1,17 @@
 <div class="mt-5">
   <h2 class="text-3xl border shadow-sm">My Heroes</h2>
+
+  <div class="flex items-baseline justify-start h-8 space-x-1">
+    <label for="new-hero">Hero name: </label>
+    <input class="pl-1 border rounded border-slate-600" id="new-hero" #heroName />
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button"
+      class="p-2 mb-3 text-sm transition-all rounded shadow-md text-slate-900 bg-slate-200 hover:text-white hover:bg-green-500 hover:text-base hover:shadow-xl"
+      (click)="add(heroName.value); heroName.value=''">
+      Add hero
+    </button>
+  </div>
+
   <ul class="p-0 mt-4 list-none w-60">
     <li class="flex mb-4 border shadow-md" *ngFor="let hero of heroes">
       <a routerLink="/detail/{{hero.id}}"
