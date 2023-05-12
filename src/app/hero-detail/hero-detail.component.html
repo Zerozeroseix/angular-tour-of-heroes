@@ -1,16 +1,17 @@
-<div *ngIf="hero">
+<div class="my-4" *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
-  <div>
-    <div class="flex items-center justify-between pl-2 mt-2 border shadow-md h-14 w-[340px]">
-      <div>
-        <div><span>id: </span>{{hero.id}}</div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
-      </div>
-      <div>
-        <img class="w-12 h-12 border border-slate-600 bg-slate-200" [title]="hero.name" [src]="hero.image"
-          alt={{hero.name}} />
-      </div>
+  <div class="flex items-center justify-between pl-2 my-2 border shadow-md h-14 w-[340px]">
+    <div>
+      <div><span>id: </span>{{hero.id}}</div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    </div>
+    <div>
+      <img class="w-12 h-12 border border-slate-600 bg-slate-200" [title]="hero.name" [src]="hero.image"
+        alt={{hero.name}} />
     </div>
   </div>
+  <button
+    class="p-2 mb-3 text-sm transition-all rounded shadow-md text-slate-900 bg-slate-200 hover:text-white hover:bg-blue-500 hover:text-base hover:shadow-xl"
+    type="button" (click)="goBack()">go back</button>
 </div>
