@@ -18,13 +18,13 @@ export class HeroDetailComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getHeroWithImage()
+    this.getHero()
   }
 
 
-  getHeroWithImage(): void {
+  getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.heroService.getHeroWithImage(id).subscribe(hero => { return this.hero = hero })
+    this.heroService.getHero(id).subscribe(hero => { return this.hero = hero })
   }
 
   goBack(): void {
