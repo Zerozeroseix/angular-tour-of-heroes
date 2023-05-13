@@ -2,7 +2,7 @@
 
   <h2 class="text-sm font-light text-red-900">Messages</h2>
   <button type="button"
-    class="p-2 mb-3 text-sm transition-all rounded shadow-md text-slate-900 bg-slate-200 hover:text-white hover:bg-red-500 hover:text-base hover:shadow-xl"
+    class="p-2 mb-3 text-sm rounded shadow-md transition-all text-slate-900 bg-slate-200 hover:text-white hover:bg-red-500 hover:text-base hover:shadow-xl"
     (click)="messageService.clear()">Clear messages</button>
   <div *ngFor='let message of messageService.messages'> {{message}} </div>
 

@@ -13,9 +13,8 @@
   </div>
 
   <ul class="p-0 mt-4 list-none w-60">
-    <li class="flex mb-4 border shadow-md" *ngFor="let hero of heroes">
-      <a routerLink="/detail/{{hero.id}}"
-        class="flex items-stretch h-9 flex-1 left-0 space-y-1 cursor-pointer relative  m-[0.5] p-0 rounded "
+    <li class="relative flex justify-around mb-4 border shadow-md hover:left-1" *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}" class="flex items-stretch  h-9 flex-1 space-y-1 cursor-pointer  m-[0.5] p-0"
         [ngClass]="{'bg-slate-50 hover:bg-slate-800 hover:text-slate-50 hover:left-[0.1rem]' :  hero!==selectedHero, 'text-lg bg-black text-white hover:bg-gray-500': hero===selectedHero}"
         type="button">
         <span
@@ -23,9 +22,10 @@
         <div class="flex items-baseline justify-between flex-1"> <span class="self-center">{{hero.name}}</span>
           <img class="w-10 h-8" [title]="hero.name" [src]="hero.image" alt={{hero.name}} />
         </div>
-
       </a>
+      <button type="button"
+        class="px-2 pt-px pb-1 m-0 text-lg bg-white text-neutral-600 hover:bg-red-500 hover:text-white"
+        title="delete hero" (click)="delete(hero)">x</button>
     </li>
   </ul>
-
 </div>
