@@ -30,6 +30,6 @@
       </li>
     </ul>
   </div>
-  <app-deletion-message [(heroDeletionMessageIsVisible)]="isVisible" [hero]="deletedHero"
-    class="self-center flex-1 max-w-fit"></app-deletion-message>
+  <app-action-on-hero-message [(heroDeletionMessageIsVisible)]="isVisible" [isAlreadyMember]="isAlreadyMember"
+    [action]="action" [hero]="actionHero" class="self-center flex-1 max-w-fit"></app-action-on-hero-message>
 </div>
