@@ -14,6 +14,9 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { actionOnHeroMessageComponent } from "./UI/action-on-hero-message.component";
+import { ModalComponent } from "./UI/modal.component";
+import { ModalPageComponent } from './pages/modal-page/modal-page.component';
+import { SidebarComponent } from './UI/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { actionOnHeroMessageComponent } from "./UI/action-on-hero-message.compon
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    ModalPageComponent,
+    SidebarComponent
   ],
   bootstrap: [AppComponent],
   imports: [
@@ -33,7 +38,8 @@ import { actionOnHeroMessageComponent } from "./UI/action-on-hero-message.compon
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
-    actionOnHeroMessageComponent
+    actionOnHeroMessageComponent,
+    ModalComponent
   ]
 })
 export class AppModule { }

@@ -1,13 +1,21 @@
 <div class="container mx-auto">
   <h1 class="mt-0 mb-0 text-5xl font-bold leading-normal text-slate-800">{{title}}</h1>
 
-  <nav>
-    <a class="inline-block p-4 no-underline rounded shadow-md decoration-0 text-slate-800 hover:text-white hover:bg-slate-500 active:bg-black"
-      routerLink="/heroes">Heroes</a>
-    <a class="inline-block p-4 no-underline rounded shadow-md decoration-0 text-slate-800 hover:text-white hover:bg-slate-500 active:bg-black"
-      routerLink="/dashboard">Dashboard</a>
-  </nav>
+  <div>
+    <app-sidebar></app-sidebar>
+    <div>
+      <nav>
+        <a class="inline-block p-4 no-underline rounded shadow-md decoration-0 text-slate-800 hover:text-white hover:bg-slate-500 active:bg-black"
+          routerLink="/heroes">Heroes</a>
+        <a class="inline-block p-4 no-underline rounded shadow-md decoration-0 text-slate-800 hover:text-white hover:bg-slate-500 active:bg-black"
+          routerLink="/dashboard">Dashboard</a>
+      </nav>
+    </div>
+  </div>
+
+
 
   <router-outlet></router-outlet>
   <app-messages></app-messages>
+
 </div>
