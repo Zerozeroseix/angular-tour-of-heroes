@@ -7,7 +7,7 @@ import { NgClass, NgIf } from "@angular/common";
   selector: "app-action-on-hero-message",
   standalone: true,
   template: `
-    <div *ngIf="heroDeletionMessageIsVisible" class="m-3 p-3 border rounded-lg shadow-lg">
+    <div *ngIf="heroDeletionMessageIsVisible" class="p-3 m-3 border rounded-lg shadow-lg">
 
       <h2 *ngIf="isAlreadyMember===false" class="mb-4 text-md font-extralight">
 
